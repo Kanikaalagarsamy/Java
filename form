@@ -1,0 +1,47 @@
+package form;
+import java.awt.*;
+import java.awt.event.*;
+class Simple{
+	Simple(){
+		Frame frame=new Frame("Form");
+		Label email=new Label("Email");		
+		Label password=new Label("Password");		
+		Label age=new Label("Age");
+		TextField emailinput=new TextField("Enter your Email");
+		TextField passwordinput=new TextField("Enter your Password");
+		TextField ageinput=new TextField("Enter your Age");
+		email.setBounds(50,120,100,30);
+		password.setBounds(50,170,100,30);
+		age.setBounds(50,210,100,30);
+		emailinput.setBounds(170,120,200,30);
+		passwordinput.setBounds(170,170,200,30);
+		ageinput.setBounds(170,210,200,30);
+		Button submit=new Button("SUBMIT");
+		submit.setBounds(175,280,50,30);
+		ActionListener submitlistener=new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(emailinput.getText());
+				System.out.println(passwordinput.getText());
+				System.out.println(ageinput.getText());
+			}
+		};
+		submit.addActionListener(submitlistener);
+		frame.add(submit);
+		frame.add(email);
+		frame.add(password);
+		frame.add(age);
+		frame.add(emailinput);
+		frame.add(passwordinput);
+		frame.add(ageinput);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		frame.setSize(400,500);
+	}
+}
+public class Form {
+	public static void main(String[]args) {
+		new Simple();
+		
+	}
+
+}
